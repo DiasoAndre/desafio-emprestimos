@@ -1,7 +1,7 @@
 const { z } = require('zod')
 
 const customerSchema = z.object({
-    age: z.string(),
+    age: z.number(),
     cpf: z.string(),
     name: z.string(),
     income: z.number(),
