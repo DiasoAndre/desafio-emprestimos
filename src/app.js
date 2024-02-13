@@ -12,7 +12,7 @@ app.use(router);
 const main = async () => {
   await data.conn();
   app.listen(5433, () => {
-    console.log("App running in http://localhost:5433/");
+    console.log("App running at http://localhost:5433/");
   });
 }
 
