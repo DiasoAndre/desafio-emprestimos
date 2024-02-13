@@ -1,4 +1,4 @@
-const { data } = require("../../loans");
+const { data } = require("./loans");
 
 const loansUseCase = async (customer) => {
   let result = [];
