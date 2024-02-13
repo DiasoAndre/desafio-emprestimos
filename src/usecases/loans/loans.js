@@ -1,6 +1,6 @@
 const data = (customer) =>  [
   {
-    name: "Pessoal",
+    name: "PERSONAL",
     requirements:
       customer.income > 3000 ||
       (customer.income > 3000 && customer.income < 5000) ||
@@ -8,12 +8,12 @@ const data = (customer) =>  [
     interest_rate: 4,
   },
   {
-    name: "Consignado",
+    name: "CONSIGNMENT",
     requirements: customer.income >= 5000,
     interest_rate: 3,
   },
   {
-    name: "Garantia",
+    name: "GUARANTEED",
     requirements:
       customer.income <= 3000 ||
       (customer.income > 3000 &&
@@ -24,4 +24,4 @@ const data = (customer) =>  [
   },
 ];
 
-module.exports = { loans }
+module.exports = { data }
