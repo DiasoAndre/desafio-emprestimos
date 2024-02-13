@@ -5,7 +5,7 @@ const loansUseCase = (customer) => {
   const customerLoans = data(customer);
 
   customerLoans.forEach((loan) => {
-    console.log(loan)
+    
     if (loan.requirements) {
       result.push({
         type: loan.name,
