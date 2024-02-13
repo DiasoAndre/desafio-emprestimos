@@ -2,4 +2,4 @@ const { Router } = require('express')
 
 const router = Router()
 
-export { router }
+module.exports = { router }

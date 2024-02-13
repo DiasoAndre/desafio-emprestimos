@@ -1,17 +1,18 @@
 const { Pool } = require('pg')
+const { config } = require('dotenv')
 
-export const data = {
+const data = {
     dbPool: null,
     async conn() 
     {
-        dotenv.config()
+        config()
 
         this.dbPool = new Pool({
-            user: process.env.DB_USER,
-            host: process.env.DB_HOST,
-            database: process.env.DATABASE,
-            password : process.env.DB_PASSW,
-            port : process.env.DB_PORT
+            user: process.env.POSTGRES_USER,
+            host: process.env.POSTGRES_HOST,
+            database: process.env.POSTGRES_DATABASE,
+            password : process.env.POSTGRES_PASSWORD,
+            port : process.env.POSTGRES_PORT
         })
 
         try {
@@ -20,9 +21,11 @@ export const data = {
             console.log('PostgreSQL autenticado com Sucesso!!')
         } catch (error) {
             console.log(`Erro ao autenticar com PostgreSQL.`)
-            console.log(`\taddress:${process.env.DB_HOST}\n\tport:${process.env.DB_PORT}`)
-            console.log(`\tuser:${process.env.DB_USER}\n\tpassword:${process.env.DB_PASSW}`)
+            console.log(`\taddress:${process.env.POSTGRES_HOST}\n\tport:${process.env.POSTGRES_PORT}`)
+            console.log(`\tuser:${process.env.POSTGRES_USER}\n\tpassword:${process.env.POSTGRES_PASSWORD}`)
             throw error
         }   
     }
 }
+
+module.exports = { data }
